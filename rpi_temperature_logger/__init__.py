@@ -1,1 +1,1 @@
-from dht22 import DHTDevice
+from rpi_temperature_logger.dht22 import DHTDevice
