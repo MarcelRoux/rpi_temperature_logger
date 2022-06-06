@@ -3,9 +3,12 @@ from rpi_temperature_logger import DHTDevice
 import time
 from edge_logger import SensorLog
 
+
+SENSOR = 'dht22'
+DB_ROOT = '/home/pi/data'
+
+
 sched = BlockingScheduler()
-
-
 device = DHTDevice()
 
 
@@ -26,7 +29,7 @@ def main():
         'temp': temp,
         'humid': humid
     }
-    SensorLog().insert(data)
+    SensorLog(sensor=SENSOR, db_root=DB_ROOT).insert(data)
 
 
 # if __name__ == '__main__':
