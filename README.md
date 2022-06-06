@@ -19,7 +19,6 @@ Ensure that the latest package versions and upgrades are installed.
 ### Install dependencies
 
 Install pip3:
-
 ```
 sudo apt install python3-pip
 ```
@@ -39,8 +38,14 @@ sudo apt-get install libgpiod2
 pip3 install sysv-ipc
 ```
 
-## Installation
-
+Install python dependencies.
 ```
 pip install -r requirements.txt
 ```
+
+## Data Log
+
+The program is intended to be run as a service. In a unix environment this can be achieved by using the systemd interface to register services.
+It is good practice to use `absolute paths` when executing services from the systemd interface.
+
+By default this logger will log data in `/home/pi/data` with a pattern of `<sensor>/<year>/<month>/<day>/<sensor>_<year>-<month>-<day> <hour>:00:00.00.db`.
